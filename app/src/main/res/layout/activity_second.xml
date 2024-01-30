@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".secondActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ellipse_1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="212dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/borcelle_removebg_preview_1" />
+
+    <TextView
+        android:id="@+id/txt_refeicao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Próxima refeição: 01/01/2024 às 10:50 || Ref-1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="262dp" />
+
+    <Button
+        android:id="@+id/btn_agendar"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#004AAD"
+        android:text="          AGENDAR"
+        android:textAlignment="textStart"
+        android:textColorHighlight="#004AAD"
+        android:textColorLink="#004AAD"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="333dp" />
+
+    <Button
+        android:id="@+id/btn_historic"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#004AAD"
+        android:text="          HISTÓRICO"
+        android:textAlignment="textStart"
+        android:textColorHighlight="#004AAD"
+        android:textColorLink="#004AAD"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="426dp" />
+
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#004AAD"
+        android:text="          CÂMERA"
+        android:textAlignment="textStart"
+        android:textColorHighlight="#004AAD"
+        android:textColorLink="#004AAD"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="519dp" />
+
+    <Button
+        android:id="@+id/btn_liberar"
+        android:layout_width="150dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#004AAD"
+        android:text="LIBERAR"
+        android:textAlignment="center"
+        android:textColorHighlight="#004AAD"
+        android:textColorLink="#004AAD"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="628dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/vector"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/photo_camera_fill0_wght400_grad0_opsz24_1"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="537dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/history_fill0_wght400_grad0_opsz24_1"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="442dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
