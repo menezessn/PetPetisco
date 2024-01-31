@@ -125,7 +125,7 @@ public class newSnackActivity extends AppCompatActivity {
             Toast.makeText(this, "Selecione um dia da semana", Toast.LENGTH_SHORT).show();
             return;
         }
-        Toast.makeText(this, String.format("Agendamento às %02d:%02d horas salvo", hour, minutes), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, String.format("Agendamento às %02d:%02d salvo", hour, minutes), Toast.LENGTH_SHORT).show();
     }
 
 }
