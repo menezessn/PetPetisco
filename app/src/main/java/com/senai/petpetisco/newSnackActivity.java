@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.dpro.widgets.OnWeekdaysChangeListener;
 import com.dpro.widgets.WeekdaysPicker;
@@ -29,6 +30,7 @@ public class newSnackActivity extends AppCompatActivity {
 
     WeekdaysPicker widget;
 
+    List<Integer> selectedDays;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,15 @@ public class newSnackActivity extends AppCompatActivity {
         List<Integer> days = Arrays.asList();
 
         widget.setSelectedDays(days);
+
+        Button schedule = (Button) findViewById(R.id.schedule);
+
+        schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendSchedule();
+            }
+        });
     }
 
     public void popTimePicker(){
@@ -70,7 +81,7 @@ public class newSnackActivity extends AppCompatActivity {
         timePickerDialog.show();
     }
 
-    public static void sendMessage() {
+    public void sendMessage() {
 
         String topic        = "signal/control";
         String content      = "Message from MqttPublishSample";
@@ -102,6 +113,19 @@ public class newSnackActivity extends AppCompatActivity {
             System.out.println("excep "+me);
             me.printStackTrace();
         }
+    }
+
+    public void sendSchedule(){
+        selectedDays = widget.getSelectedDays();
+
+        for(int day : selectedDays){
+            MQQTComunication.sendMessage(day + "-" + hour + "-" + minutes + "-0");
+        }
+        if (selectedDays.isEmpty()){
+            Toast.makeText(this, "Selecione um dia da semana", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Toast.makeText(this, String.format("Agendamento às %02d:%02d horas salvo", hour, minutes), Toast.LENGTH_SHORT).show();
     }
 
 }

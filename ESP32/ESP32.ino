@@ -183,19 +183,19 @@ void callback(char* receivedTopic, byte* payload, unsigned int length) {
     seconds = atoi(token);
 
 
-    if(wday == 0){
+    if(wday == 1){
       Alarm.alarmRepeat(dowSunday, hours, minutes, seconds, sendSignal);
-    } else if(wday == 1){
-      Alarm.alarmRepeat(dowMonday, hours, minutes, seconds, sendSignal);
     } else if(wday == 2){
-      Alarm.alarmRepeat(dowTuesday, hours, minutes, seconds, sendSignal);
+      Alarm.alarmRepeat(dowMonday, hours, minutes, seconds, sendSignal);
     } else if(wday == 3){
+      Alarm.alarmRepeat(dowTuesday, hours, minutes, seconds, sendSignal);
+    } else if(wday == 4){
       Alarm.alarmRepeat(dowWednesday, hours, minutes, seconds, sendSignal);
-    }else if(wday == 4){
+    }else if(wday == 5){
       Alarm.alarmRepeat(dowThursday, hours, minutes, seconds, sendSignal);
-    } else if(wday == 5){
-      Alarm.alarmRepeat(dowFriday, hours, minutes, seconds, sendSignal);
     } else if(wday == 6){
+      Alarm.alarmRepeat(dowFriday, hours, minutes, seconds, sendSignal);
+    } else if(wday == 7){
       Alarm.alarmRepeat(dowSaturday, hours, minutes, seconds, sendSignal);
     } 
   }

@@ -11,20 +11,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="NOVA REFEIÇÃO"
+        android:text="AGENDAR REFEIÇÃO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:background="@color/white"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.dpro.widgets.WeekdaysPicker
         android:id="@+id/weekdays"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:highlight_color="@color/main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:sunday_first_day="false"
-        app:highlight_color="@color/main"
-        />
+        app:sunday_first_day="false" />
 
     <Button
         android:id="@+id/btnSelectTime"
