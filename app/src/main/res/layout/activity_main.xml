@@ -4,29 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#004AAD"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="357dp"
-        android:layout_height="470dp"
-        android:background="#004AAD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/borcelle_removebg_preview_1" />
-
-    <Button
-        android:id="@+id/btn_home_page"
+    <TextView
+        android:id="@+id/txt_refeicao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-50dp"
-        android:backgroundTint="#004AAD"
-        android:text="CLICK HERE"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="Próxima refeição: 01/01/2024 às 10:50 || Ref-1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_agendar"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#004AAD"
+        android:text="AGENDA"
+        android:textAlignment="textStart"
+        android:textColorHighlight="#004AAD"
+        android:textColorLink="#004AAD"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/agenda"
+        app:iconSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_historical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_historical"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#004AAD"
+        android:text="HISTÓRICO"
+        android:textAlignment="textStart"
+        android:textColorHighlight="#004AAD"
+        android:textColorLink="#004AAD"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/history_fill0_wght400_grad0_opsz24_1"
+        app:iconSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_liberar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_refeicao" />
+
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
+        android:backgroundTint="#004AAD"
+        android:text="CÂMERA"
+        android:textAlignment="textStart"
+        android:textColorHighlight="#004AAD"
+        android:textColorLink="#004AAD"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/photo_camera_fill0_wght400_grad0_opsz24_1"
+        app:iconSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_historical" />
+
+    <Button
+        android:id="@+id/btn_liberar"
+        android:layout_width="150dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#004AAD"
+        android:text="LIBERAR"
+        android:textAlignment="center"
+        android:textColorHighlight="#004AAD"
+        android:textColorLink="#004AAD"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

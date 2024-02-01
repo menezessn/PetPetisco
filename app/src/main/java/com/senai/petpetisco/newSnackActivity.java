@@ -36,6 +36,15 @@ public class newSnackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_snack);
+
+        Button btnBack = (Button)findViewById(R.id.btn_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         btnSelectTime = (Button) findViewById(R.id.btnSelectTime);
 
         btnSelectTime.setOnClickListener(new View.OnClickListener() {
