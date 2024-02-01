@@ -158,9 +158,7 @@ void callback(char* receivedTopic, byte* payload, unsigned int length) {
   Serial.println(message);
 
   if (message == "sinal") {
-    digitalWrite(ledPin, HIGH);
-    delay(2000);
-    digitalWrite(ledPin, LOW);
+    sendSignal();
   } else {
    
 
