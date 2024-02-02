@@ -37,7 +37,7 @@ public class newSnackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_snack);
 
-        Button btnBack = (Button)findViewById(R.id.btn_back);
+        Button btnBack = (Button)findViewById(R.id.btn_back_new_snack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +65,7 @@ public class newSnackActivity extends AppCompatActivity {
 
         widget.setSelectedDays(days);
 
-        Button schedule = (Button) findViewById(R.id.schedule);
+        Button schedule = (Button) findViewById(R.id.btn_add_schedule);
 
         schedule.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,10 +18,28 @@ public class MainActivity extends AppCompatActivity {
         btnAgenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, newSnackActivity.class);
+                Intent intent = new Intent(MainActivity.this, scheduleActivity.class);
                 startActivity(intent);
             }
         });
+
+        Button btnHistory = (Button) findViewById(R.id.btn_history);
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btnCam = (Button) findViewById(R.id.btn_camera);
+        btnCam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CamActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         Button btnLiberar = (Button) findViewById(R.id.btn_liberar);
         btnLiberar.setOnClickListener(new View.OnClickListener() {
