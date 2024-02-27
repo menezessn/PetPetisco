@@ -3,6 +3,13 @@
 #include <TimeLib.h>
 #include <TimeAlarms.h>
 #include <PubSubClient.h>
+#include <AccelStepper.h>
+
+#define STEP_PIN 13   // Pino de passo conectado ao pino de passo do driver A4988
+#define DIR_PIN 12    // Pino de direção conectado ao pino de direção do driver A4988
+
+AccelStepper stepper(1, STEP_PIN, DIR_PIN);
+
 
 int wday, hours, minutes, seconds;
 
@@ -38,11 +45,12 @@ void setup() {
   conectarMQTT();
 
 
-  Alarm.alarmRepeat(dowMonday, 10, 19, 0, sendSignal);
-  Alarm.alarmRepeat(dowMonday, 10, 20, 0, sendSignal);
+  
+ 
 
-  //Configuração de pinos
-  pinMode(ledPin, OUTPUT);
+  stepper.setMaxSpeed(1000.0);  // Velocidade máxima do motor em passos por segundo
+  stepper.setAcceleration(500.0);  // Aceleração do motor em passos por segundo ao quadrado
+
 }
 
 void loop() {
@@ -67,10 +75,12 @@ void loop() {
 }
 
 void sendSignal(){
-  Serial.println("Sinal");
-  digitalWrite(15,HIGH);
-  delay(2000);
-  digitalWrite(15,LOW);
+  Serial.println("Motor girou");
+  int passosPorVolta = 50;
+  stepper.moveTo(passosPorVolta);
+  stepper.runToPosition();
+  stepper.setCurrentPosition(0);
+
 }
 
 void receiveSchedule(){
@@ -116,6 +126,8 @@ void configESPTime(){
   getLocalTime(&tmstruct);
   //Configurar o horário do ESP
   setTime(tmstruct.tm_hour, tmstruct.tm_min, tmstruct.tm_sec, tmstruct.tm_mday, tmstruct.tm_mon, (tmstruct.tm_year) + 1900);
+  adjustTime(86400 * (1 + tmstruct.tm_wday - weekday()));
+  
 }
 
 void conectarMQTT() {
