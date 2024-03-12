@@ -7,6 +7,8 @@
 
 #define STEP_PIN 13   // Pino de passo conectado ao pino de passo do driver A4988
 #define DIR_PIN 12    // Pino de direção conectado ao pino de direção do driver A4988
+#define PIR_PIN 32    // Pino do sensor de movimento conectado ao ESP32
+
 
 AccelStepper stepper(1, STEP_PIN, DIR_PIN);
 
@@ -47,7 +49,7 @@ void setup() {
 
   
  
-
+  pinMode(PIR_PIN, INPUT);
   stepper.setMaxSpeed(1000.0);  // Velocidade máxima do motor em passos por segundo
   stepper.setAcceleration(500.0);  // Aceleração do motor em passos por segundo ao quadrado
 
@@ -75,16 +77,23 @@ void loop() {
 }
 
 void sendSignal(){
+
+  if(digitalRead(PIR_PIN) == HIGH){ // Se o sensor for acionado
+    stepper.stop(); // trava o motor não permitindo sua rotação
+  }
+  else{
+    stepper.moveTo(passosPorVolta); // Seta os passos por volta
+    stepper.runToPosition(); // Move para a posição
+    stepper.setCurrentPosition(0); // Define a posição nova como 0 para um novo ciclo
+  }
+
+  /*
   Serial.println("Motor girou");
   int passosPorVolta = 50;
   stepper.moveTo(passosPorVolta);
   stepper.runToPosition();
   stepper.setCurrentPosition(0);
-
-}
-
-void receiveSchedule(){
-
+  */
 }
 
 void connectWifi(){
