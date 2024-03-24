@@ -44,10 +44,6 @@ void setup() {
 
   conectarMQTT();
 
-
-  
- 
-
   stepper.setMaxSpeed(1000.0);  // Velocidade máxima do motor em passos por segundo
   stepper.setAcceleration(500.0);  // Aceleração do motor em passos por segundo ao quadrado
 
