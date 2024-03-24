@@ -78,18 +78,19 @@ void loop() {
 
 void sendSignal(){
 
-  if(digitalRead(PIR_PIN) == HIGH){ // Se o sensor for acionado
-    stepper.stop(); // trava o motor não permitindo sua rotação
-  }
-  else{
+  int passosPorVolta = 50;
+
+  while(true){ // Se o sensor for acionado
+    if(digitalRead(PIR_PIN) == LOW)){
     stepper.moveTo(passosPorVolta); // Seta os passos por volta
     stepper.runToPosition(); // Move para a posição
     stepper.setCurrentPosition(0); // Define a posição nova como 0 para um novo ciclo
+    Serial.println("Motor girou"); 
+    break;
+    }
   }
-
+  
   /*
-  Serial.println("Motor girou");
-  int passosPorVolta = 50;
   stepper.moveTo(passosPorVolta);
   stepper.runToPosition();
   stepper.setCurrentPosition(0);
