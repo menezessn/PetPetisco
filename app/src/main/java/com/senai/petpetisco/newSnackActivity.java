@@ -21,8 +21,14 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import com.senai.petpetisco.DBHelper;
+
+
+
 
 public class newSnackActivity extends AppCompatActivity {
+
+    private DBHelper dbHelper;
 
     int hour, minutes;
     final int seconds = 0;
@@ -36,6 +42,8 @@ public class newSnackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_snack);
+
+        dbHelper = new DBHelper(this);
 
         Button btnBack = (Button)findViewById(R.id.btn_back_new_snack);
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +136,9 @@ public class newSnackActivity extends AppCompatActivity {
         selectedDays = widget.getSelectedDays();
 
         for(int day : selectedDays){
-            MQQTComunication.sendMessage(day + "-" + hour + "-" + minutes + "-0");
+            String message = day + "-" + hour + "-" + minutes + "-0";
+            dbHelper.addTimes(message);
+            MQQTComunication.sendMessage(message);
         }
         if (selectedDays.isEmpty()){
             Toast.makeText(this, "Selecione um dia da semana", Toast.LENGTH_SHORT).show();

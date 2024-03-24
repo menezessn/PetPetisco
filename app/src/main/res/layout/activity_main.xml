@@ -21,8 +21,8 @@
         android:id="@+id/logo"
         android:layout_width="160dp"
         android:layout_height="160dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/btn_agendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_refeicao" />
@@ -40,46 +40,11 @@
         app:cornerRadius="10dp"
         app:icon="@drawable/baseline_event_note_24"
         app:iconSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_history"
+        app:layout_constraintBottom_toTopOf="@+id/btn_liberar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_history"
-        android:layout_width="342dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="400dp"
-        android:backgroundTint="#004AAD"
-        android:text="HISTÓRICO"
-        android:textAlignment="textStart"
-        android:textColorHighlight="#004AAD"
-        android:textColorLink="#004AAD"
-        android:textSize="16dp"
-        app:cornerRadius="10dp"
-        app:icon="@drawable/baseline_history_24"
-        app:iconSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_refeicao" />
-
-    <Button
-        android:id="@+id/btn_camera"
-        android:layout_width="342dp"
-        android:layout_height="64dp"
-        android:backgroundTint="#004AAD"
-        android:text="CÂMERA"
-        android:textAlignment="textStart"
-        android:textColorHighlight="#004AAD"
-        android:textColorLink="#004AAD"
-        android:textSize="16dp"
-        app:cornerRadius="10dp"
-        app:icon="@drawable/baseline_camera_alt_24"
-        app:iconSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_history" />
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <Button
         android:id="@+id/btn_liberar"
